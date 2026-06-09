@@ -2,6 +2,7 @@ import { Hero } from './sections/Hero';
 import { Beneficios } from './sections/Beneficios';
 import { Hardware } from './sections/Hardware';
 import { Pricing } from './sections/Pricing';
+import { FAQ } from './sections/FAQ';
 import { Footer } from './components/layout/Footer';
 import { Navbar } from './components/layout/Navbar';
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <Beneficios />
         <Hardware />
         <Pricing />
+        <FAQ />
+        
       </main>
 
       <Footer />

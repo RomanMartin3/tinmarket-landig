@@ -10,22 +10,22 @@ export const Hardware = () => {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 font-bold text-xs uppercase tracking-widest mb-6 border border-orange-500/30">
-            <PackageOpen size={14} /> Oferta Exclusiva
+            <PackageOpen size={14} /> Tu Ventaja Injusta
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 leading-tight">
-            Nosotros ponemos el hardware. <span className="text-orange-500">Vos ponés las ventas.</span>
+            Nosotros ponemos el hardware. <br/><span className="text-orange-500">Tú pones las ventas.</span>
           </h2>
           <p className="text-lg text-slate-300 font-medium mb-8">
-            Digitalizar un negocio suele requerir una gran inversión inicial en aparatos. Con el Plan Único de TinMarket, te entregamos los equipos físicos en comodato para que no gastes de más.
+            Comprar una lectora y una ticketera hoy es una barrera enorme. Nosotros la eliminamos. Al usar nuestro sistema, el equipamiento físico queda 100% cubierto.
           </p>
           <ul className="space-y-4 font-bold text-slate-200">
-            <li className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Lector de códigos de barra de alta velocidad.</li>
-            <li className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Impresora térmica para tickets.</li>
-            <li className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Reemplazo gratuito ante fallas de fábrica.</li>
-            <li className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Instalación presencial y capacitación (Mendoza).</li>
+            <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Lector de códigos de barra de alta velocidad.</motion.li>
+            <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Impresora térmica para entregar tickets.</motion.li>
+            <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Recambio inmediato ante cualquier falla técnica.</motion.li>
+            <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Instalación presencial garantizada en la región.</motion.li>
           </ul>
         </motion.div>
         
@@ -35,10 +35,15 @@ export const Hardware = () => {
           viewport={{ once: true }}
           className="relative flex justify-center"
         >
-          <div className="aspect-square w-full max-w-md bg-gradient-to-tr from-slate-900 to-slate-800 rounded-3xl border border-slate-700 shadow-2xl flex items-center justify-center p-8 relative z-10">
+          {/* Animación flotante para el hardware */}
+          <motion.div 
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            className="aspect-square w-full max-w-md bg-gradient-to-tr from-slate-900 to-slate-800 rounded-3xl border border-slate-700 shadow-2xl flex items-center justify-center p-8 relative z-10"
+          >
              <MonitorSmartphone size={100} className="text-slate-600 opacity-50" />
-             <div className="absolute bottom-10 text-center w-full font-black text-xl tracking-widest text-slate-500 uppercase">Hardware Listo</div>
-          </div>
+             <div className="absolute bottom-10 text-center w-full font-black text-xl tracking-widest text-orange-500 uppercase">Equipamiento Incluido</div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

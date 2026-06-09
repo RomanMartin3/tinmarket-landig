@@ -2,7 +2,7 @@ import { CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Pricing = () => {
-  const whatsappSoporte = "https://wa.me/549XXXXXXXXX?text=Hola!%20Quiero%20mis%207%20días%20de%20prueba%20en%20TinMarket";
+  const whatsappSoporte = "https://wa.me/5492615876117?text=Hola!%20Quiero%20mis%207%20días%20de%20prueba%20en%20TinMarket";
 
   return (
     <section id="precio" className="py-24 bg-slate-50">
@@ -29,7 +29,7 @@ export const Pricing = () => {
             <h3 className="text-2xl font-black uppercase tracking-widest text-slate-500 mb-2">TinMarket Full</h3>
             <div className="flex justify-center items-start mb-6">
               <span className="text-2xl font-bold text-slate-900 mt-2">$</span>
-              <span className="text-7xl font-black tracking-tighter text-slate-900">XXXX</span>
+              <span className="text-7xl font-black tracking-tighter text-slate-900">30</span>
               <span className="text-lg font-bold text-slate-500 self-end mb-2">/mes</span>
             </div>
             

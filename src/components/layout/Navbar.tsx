@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+// Importamos la configuración global en lugar de tener variables sueltas
+import { APP_CONFIG } from '../../config/constants';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const urlSistema = "https://app.tinmarket.com.ar/login";
-  const whatsappSoporte = "https://wa.me/5492615876117?text=Hola!%20Quiero%20mis%207%20días%20de%20prueba%20en%20TinMarket";
 
   return (
     <motion.nav 
@@ -23,9 +23,11 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#beneficios" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">Beneficios</a>
             <a href="#hardware" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">Equipamiento</a>
+            <a href="#faq" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">FAQ</a>
             <a href="#precio" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">Plan Único</a>
-            <a href={urlSistema} className="text-sm font-black text-slate-900 hover:text-orange-600 transition-colors">INICIAR SESIÓN</a>
-            <a href={whatsappSoporte} target="_blank" rel="noreferrer" className="bg-orange-600 text-white px-6 py-2.5 rounded-lg font-black text-sm hover:bg-orange-700 transition-all shadow-lg shadow-orange-500/30 uppercase tracking-widest">
+            <a href={APP_CONFIG.urls.login} className="text-sm font-black text-slate-900 hover:text-orange-600 transition-colors">INICIAR SESIÓN</a>
+            {/* Agregado rel="noopener noreferrer" por seguridad */}
+            <a href={APP_CONFIG.urls.whatsappSales} target="_blank" rel="noopener noreferrer" className="bg-orange-600 text-white px-6 py-2.5 rounded-lg font-black text-sm hover:bg-orange-700 transition-all shadow-lg shadow-orange-500/30 uppercase tracking-widest">
               Probar Gratis
             </a>
           </div>
@@ -46,10 +48,13 @@ export const Navbar = () => {
         >
           <a href="#beneficios" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">Beneficios</a>
           <a href="#hardware" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">Hardware</a>
+          <a href="#faq" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">FAQ</a>
           <a href="#precio" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">Precio</a>
           <hr className="border-slate-100" />
-          <a href={urlSistema} className="block font-black text-slate-900">INICIAR SESIÓN</a>
-          <a href={whatsappSoporte} className="block w-full text-center bg-orange-600 text-white px-4 py-3 rounded-lg font-black mt-2">PROBAR GRATIS</a>
+          <a href={APP_CONFIG.urls.login} className="block font-black text-slate-900">INICIAR SESIÓN</a>
+          <a href={APP_CONFIG.urls.whatsappSales} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="block w-full text-center bg-orange-600 text-white px-4 py-3 rounded-lg font-black mt-2">
+            PROBAR GRATIS
+          </a>
         </motion.div>
       )}
     </motion.nav>

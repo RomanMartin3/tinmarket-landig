@@ -40,7 +40,7 @@ export const Pricing = () => {
                 <div className="flex items-center gap-3 font-bold text-slate-700"><CheckCircle size={20} className="text-emerald-500 shrink-0" /> Motor de Promos</div>
                 <div className="flex items-center gap-3 font-bold text-slate-700"><CheckCircle size={20} className="text-emerald-500 shrink-0" /> Control de Stock</div>
                 <div className="flex items-center gap-3 font-bold text-slate-900 bg-orange-100 py-1 px-2 rounded -ml-2"><CheckCircle size={20} className="text-orange-600 shrink-0" /> Lector en comodato</div>
-                <div className="flex items-center gap-3 font-bold text-slate-900 bg-orange-100 py-1 px-2 rounded -ml-2"><CheckCircle size={20} className="text-orange-600 shrink-0" /> Ticketera incluida</div>
+                <div className="flex items-center gap-3 font-bold text-slate-700"><CheckCircle size={20} className="text-emerald-500 shrink-0" /> Panel de estadísticas</div>
               </div>
             </div>
 

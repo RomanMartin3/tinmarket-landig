@@ -1,59 +1,82 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Store } from 'lucide-react';
 import { motion } from 'framer-motion';
-// Importamos la configuración global en lugar de tener variables sueltas
 import { APP_CONFIG } from '../../config/constants';
 
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/60 py-3' : 'bg-transparent py-5'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <img src="/logo-icon.png" alt="TinMarket Icono" className="h-10 w-10 object-contain rounded-lg" />
-            <span className="font-black text-2xl tracking-tighter text-slate-900">TINMARKET</span>
+        <div className="flex justify-between items-center">
+          
+          {/* LOGO UNIFICADO (Igual al Footer) */}
+          <div className="flex items-center gap-3 cursor-pointer group">
+            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+              <Store className="text-white w-5 h-5" />
+            </div>
+            <span className="text-2xl font-black text-slate-900 tracking-tight">
+              Tin<span className="text-orange-600">Market</span>
+            </span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#beneficios" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">Beneficios</a>
-            <a href="#hardware" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">Equipamiento</a>
-            <a href="#faq" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">FAQ</a>
-            <a href="#precio" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">Plan Único</a>
-            <a href={APP_CONFIG.urls.login} className="text-sm font-black text-slate-900 hover:text-orange-600 transition-colors">INICIAR SESIÓN</a>
-            {/* Agregado rel="noopener noreferrer" por seguridad */}
-            <a href={APP_CONFIG.urls.whatsappSales} target="_blank" rel="noopener noreferrer" className="bg-orange-600 text-white px-6 py-2.5 rounded-lg font-black text-sm hover:bg-orange-700 transition-all shadow-lg shadow-orange-500/30 uppercase tracking-widest">
-              Probar Gratis
+          {/* Enlaces Desktop */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#caracteristicas" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors">Características</a>
+            <a href="#beneficios" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors">Beneficios</a>
+            <a href="#hardware" className="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors">Equipos</a>
+            <a 
+              href={APP_CONFIG.urls.whatsappSales} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-black hover:bg-orange-600 transition-all shadow-lg shadow-slate-900/10 hover:shadow-orange-600/20 hover:-translate-y-0.5 transform"
+            >
+              Acceso Anticipado
             </a>
           </div>
 
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-600 hover:text-orange-600">
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          {/* Botón Móvil */}
+          <button 
+            className="md:hidden text-slate-900 focus:outline-none"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
       </div>
 
-      {isMenuOpen && (
+      {/* Menú Móvil */}
+      {mobileMenuOpen && (
         <motion.div 
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
-          className="md:hidden bg-white border-t border-slate-100 p-4 space-y-4 shadow-xl"
+          className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl py-4 px-4 flex flex-col gap-2"
         >
-          <a href="#beneficios" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">Beneficios</a>
-          <a href="#hardware" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">Hardware</a>
-          <a href="#faq" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">FAQ</a>
-          <a href="#precio" onClick={() => setIsMenuOpen(false)} className="block font-bold text-slate-600">Precio</a>
-          <hr className="border-slate-100" />
-          <a href={APP_CONFIG.urls.login} className="block font-black text-slate-900">INICIAR SESIÓN</a>
-          <a href={APP_CONFIG.urls.whatsappSales} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="block w-full text-center bg-orange-600 text-white px-4 py-3 rounded-lg font-black mt-2">
-            PROBAR GRATIS
+          <a href="#caracteristicas" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Características</a>
+          <a href="#beneficios" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Beneficios</a>
+          <a href="#hardware" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Equipos</a>
+          <a 
+            href={APP_CONFIG.urls.whatsappSales}
+            className="bg-orange-600 text-white text-center px-5 py-3 rounded-xl font-black w-full mt-2 block shadow-lg shadow-orange-600/20"
+          >
+            Solicitar Acceso Anticipado
           </a>
         </motion.div>
       )}

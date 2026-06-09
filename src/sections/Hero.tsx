@@ -45,7 +45,7 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <a href={APP_CONFIG.urls.whatsappSales} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-orange-600 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-orange-700 hover:scale-105 transition-all shadow-xl shadow-orange-500/30">
-              Pedir una demo por WhatsApp <ArrowRight size={20} />
+              Reservar acceso a la Beta <ArrowRight size={20} />
             </a>
             <a href="#beneficios" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-black text-lg hover:border-orange-500 hover:text-orange-600 transition-all">
               <Play size={20} /> Quiero ver cómo funciona

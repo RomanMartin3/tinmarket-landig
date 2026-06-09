@@ -24,7 +24,6 @@ export const Hardware = () => {
           </p>
           <ul className="space-y-4 font-bold text-slate-200">
             <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Lector de códigos de barra de alta velocidad.</motion.li>
-            <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Impresora térmica para entregar tickets.</motion.li>
             <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Recambio inmediato ante cualquier falla técnica.</motion.li>
             <motion.li whileHover={{ x: 5 }} className="flex items-center gap-3"><CheckCircle className="text-orange-500 shrink-0" /> Instalación presencial garantizada en la región.</motion.li>
           </ul>

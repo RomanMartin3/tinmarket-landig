@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
         <div className="flex flex-col items-center md:items-start">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/logo-icon.png" alt="TinMarket" className="h-8 w-8 grayscale opacity-50" />
+            <img src="/logo-icon.png" alt="TinMarket" className="h-8 w-8 " />
             <span className="font-black text-xl tracking-tighter text-white">TINMARKET</span>
           </div>
           <p className="text-sm font-medium">El sistema operativo para el comercio moderno.</p>

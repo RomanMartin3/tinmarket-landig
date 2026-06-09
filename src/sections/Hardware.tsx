@@ -1,5 +1,6 @@
-import { PackageOpen, CheckCircle, MonitorSmartphone } from 'lucide-react';
+import { PackageOpen, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import scannerImg from '../assets/scanner-logo.jpg';
 
 export const Hardware = () => {
   return (
@@ -30,22 +31,23 @@ export const Hardware = () => {
         </motion.div>
         
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative flex justify-center"
+          transition={{ duration: 0.5 }}
+          className="relative mx-auto w-full max-w-md bg-white p-6 rounded-2xl border border-slate-200 shadow-xl flex items-center justify-center"
         >
-          {/* Animación flotante para el hardware */}
-          <motion.div 
-            animate={{ y: [0, -15, 0] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="aspect-square w-full max-w-md bg-gradient-to-tr from-slate-900 to-slate-800 rounded-3xl border border-slate-700 shadow-2xl flex items-center justify-center p-8 relative z-10"
-          >
-             <MonitorSmartphone size={100} className="text-slate-600 opacity-50" />
-             <div className="absolute bottom-10 text-center w-full font-black text-xl tracking-widest text-orange-500 uppercase">Equipamiento Incluido</div>
-          </motion.div>
+          {/* Fondo decorativo sutil detrás del escáner */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl pointer-events-none"></div>
+
+          {/* Imagen del Escáner perfectamente encuadrada */}
+          <img 
+            src={scannerImg} 
+            alt="Escáner de código de barras" 
+            className="w-full h-auto max-h-[350px] object-contain block relative z-10"
+          />
         </motion.div>
-      </div>
-    </section>
-  );
+              </div>
+            </section>
+          );
 };

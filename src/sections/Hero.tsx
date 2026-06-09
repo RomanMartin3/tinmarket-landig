@@ -1,6 +1,7 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { APP_CONFIG } from '../config/constants';
+import dashboardImg from '../assets/dashboard.png';
 
 export const Hero = () => {
   return (
@@ -76,13 +77,20 @@ export const Hero = () => {
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
             className="relative rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden"
           >
+            {/* Barra superior del navegador */}
             <div className="bg-slate-100 border-b border-slate-200 px-4 py-3 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-400"></div>
               <div className="w-3 h-3 rounded-full bg-amber-400"></div>
               <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
             </div>
-            <div className="bg-slate-50 aspect-video md:aspect-[16/9] w-full flex items-center justify-center text-slate-400 font-bold">
-              [ ACÁ VA LA IMAGEN DEL DASHBOARD DE TINMARKET ]
+            
+            {/* Contenedor de la imagen CORREGIDO */}
+            <div className="bg-slate-50 w-full">
+              <img 
+                src={dashboardImg} 
+                alt="Dashboard del sistema TinMarket" 
+                className="w-full h-auto block"
+              />
             </div>
           </motion.div>
         </motion.div>

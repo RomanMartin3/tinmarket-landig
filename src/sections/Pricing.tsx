@@ -5,15 +5,16 @@ export const Pricing = () => {
   const whatsappSoporte = "https://wa.me/5492615876117?text=Hola!%20Quiero%20mis%207%20días%20de%20prueba%20en%20TinMarket";
 
   return (
-    <section id="precio" className="py-24 bg-slate-50">
+    <section id="precio" className="py-32 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-black tracking-tighter text-slate-900 mb-4">Un solo plan. Sin letras chicas.</h2>
-          <p className="text-lg text-slate-600 mb-12">Creemos en la transparencia. Te damos la herramienta completa desde el primer día.</p>
+          {/* Tipografía: font-extrabold y tracking-tight */}
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">Un solo plan. Sin letras chicas.</h2>
+          <p className="text-xl text-slate-600 font-medium mb-16 leading-relaxed">Creemos en la transparencia. Te damos la herramienta completa desde el primer día.</p>
         </motion.div>
         
         <motion.div 

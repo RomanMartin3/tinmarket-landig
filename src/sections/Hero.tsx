@@ -9,13 +9,7 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-800 font-black text-xs uppercase tracking-widest mb-8 border border-orange-200"
-          >
-            SISTEMA DE GESTIÓN Y PUNTO DE VENTA (POS)
-          </motion.div>
+          
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -52,14 +46,7 @@ export const Hero = () => {
             </a>
           </motion.div>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-6 text-sm font-bold text-slate-500"
-          >
-            🎁 Suscríbete al software y <span className="text-orange-600">nosotros te entregamos la lectora y la ticketera</span> en comodato.
-          </motion.p>
+          
         </div>
 
         {/* Mockup del Sistema Animado */}

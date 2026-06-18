@@ -13,9 +13,7 @@ export const Hardware = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 font-bold text-xs uppercase tracking-widest mb-6 border border-orange-500/30">
-            <PackageOpen size={14} /> Tu Ventaja Injusta
-          </div>
+          
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 leading-tight">
             Nosotros ponemos el hardware. <br/><span className="text-orange-500">Tú pones las ventas.</span>
           </h2>

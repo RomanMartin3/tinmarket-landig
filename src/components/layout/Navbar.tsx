@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Store } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { APP_CONFIG } from '../../config/constants';
 
@@ -29,10 +29,12 @@ export const Navbar = () => {
           
           {/* LOGO UNIFICADO (Igual al Footer) */}
           <div className="flex items-center gap-3 cursor-pointer group">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
-              <Store className="text-white w-5 h-5" />
-            </div>
-            <span className="text-2xl font-black text-slate-900 tracking-tight">
+            <img 
+              src="/logo-icon.png" 
+              alt="TinMarket" 
+              className="h-9 w-9 object-contain transition-transform group-hover:scale-105" 
+            />
+            <span className="text-2xl font-bold text-slate-900 tracking-tight">
               Tin<span className="text-orange-600">Market</span>
             </span>
           </div>
@@ -69,7 +71,7 @@ export const Navbar = () => {
           animate={{ opacity: 1, height: 'auto' }}
           className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl py-4 px-4 flex flex-col gap-2"
         >
-          <a href="#caracteristicas" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Características</a>
+          <a href="#Módulos" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Módulos</a>
           <a href="#beneficios" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Beneficios</a>
           <a href="#hardware" onClick={() => setMobileMenuOpen(false)} className="font-bold text-slate-600 p-3 rounded-lg hover:bg-slate-50">Equipos</a>
           <a 

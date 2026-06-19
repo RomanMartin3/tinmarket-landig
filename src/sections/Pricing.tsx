@@ -49,7 +49,7 @@ export const Pricing = () => {
             <div className="text-center md:text-right">
               <div className="flex items-start justify-center md:justify-end gap-1">
                 <span className="text-2xl font-bold text-slate-900 mt-1">$</span>
-                <span className="text-6xl font-extrabold text-slate-900 tracking-tight">30.000</span>
+                <span className="text-6xl font-extrabold text-slate-900 tracking-tight">40.000</span>
               </div>
               <span className="text-slate-500 font-medium text-sm">/ mes (ARS)</span>
             </div>

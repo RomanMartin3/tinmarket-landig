@@ -11,17 +11,7 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
         <div className="max-w-4xl mx-auto mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-orange-700 font-semibold text-sm mb-8"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
-            </span>
-            Acceso Beta Abierto
-          </motion.div>
+          
 
           {/* Tipografía: Cambiamos font-black por font-extrabold y agregamos tracking-tight */}
           <motion.h1 
@@ -59,13 +49,11 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* TRUCO DE SUPERPOSICIÓN (OVERLAP) */}
-        {/* Usamos -mb-32 (md:-mb-48) para empujar la imagen hacia la sección de abajo y z-20 para que quede por encima */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
-          className="relative mx-auto max-w-5xl rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden -mb-32 md:-mb-48 z-20"
+          className="relative mx-auto max-w-5xl rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden mb-16"
         >
           <div className="bg-slate-100 border-b border-slate-200 px-4 py-3 flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-slate-300"></div>

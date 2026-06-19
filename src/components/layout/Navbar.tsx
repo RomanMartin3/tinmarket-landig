@@ -66,7 +66,7 @@ export const Navbar = () => {
                 rel="noopener noreferrer"
                 className="bg-orange-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-orange-700 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
-                Acceso Beta
+                PROBAR GRATIS
               </a>
             </div>
           </div>

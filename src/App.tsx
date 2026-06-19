@@ -13,8 +13,8 @@ function App() {
       
       <main>
         <Hero />
-        <Beneficios />
         <FeaturesTabs />
+        <Beneficios />
         <Hardware />
         <Pricing />
         <FAQ />

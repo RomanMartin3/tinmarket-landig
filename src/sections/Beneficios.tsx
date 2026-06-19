@@ -11,8 +11,7 @@ export const Beneficios = () => {
   ];
 
   return (
-    // Alternancia de color: bg-white. 
-    // pt-56 md:pt-64 es VITAL para recibir la imagen que cae desde el Hero (Overlap)
+    // Alternancia de color: bg-white.
     <section id="beneficios" className="pt-56 md:pt-64 pb-24 bg-white relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

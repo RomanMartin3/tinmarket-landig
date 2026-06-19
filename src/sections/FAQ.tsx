@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: "¿Qué incluye el equipamiento en comodato?",
-    answer: "Con el plan mensual te entregamos una impresora térmica para tickets y un lector de código de barras de alta velocidad. Mientras mantengas la suscripción, los equipos son tuyos."
+    answer: "Con el plan mensual te entregamos un lector de código de barras de alta velocidad. Mientras mantengas la suscripción, el equipo es tuyo."
   },
   {
     question: "¿Qué pasa si se me corta el internet en el local?",

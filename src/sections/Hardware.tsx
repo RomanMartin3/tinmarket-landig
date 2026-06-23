@@ -5,11 +5,16 @@ import { APP_CONFIG } from '../config/constants';
 
 export const Hardware = () => {
   return (
-    /* MANDAMIENTO DE DISEÑO (Antiaplanamiento): Sección oscura con clip-path geométrico duro. 
-       Eliminado el 'blur-150px' prohibido por la regla "Cero Efectos Baratos". */
-    <section id="hardware" className="relative pt-32 pb-40 z-10 bg-slate-900" style={{ clipPath: 'polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%)' }}>
+    /* MANDAMIENTO DE DISEÑO (Antiaplanamiento): Aumentamos el padding para contener la diagonal. */
+    <section id="hardware" className="relative pt-40 pb-48 z-10">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center relative">
+      {/* MANDAMIENTO DE DISEÑO (Regla 60-30-10 y 3D): 
+          Fondo oscuro sesgado (-skew-y-2) que actúa como un bloque sólido.
+          Le inyectamos un borde superior e inferior naranja (border-orange-600) hiperfino (2px)
+          para destacar la geometría sin inundar de color el fondo ni tapar el CTA. */}
+      <div className="absolute inset-0 z-0 bg-slate-900 transform -skew-y-2 origin-center border-t-2 border-b-2 border-orange-600 shadow-2xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center relative z-10">
         
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
@@ -48,7 +53,8 @@ export const Hardware = () => {
             </li>
           </ul>
 
-          {/* MANDAMIENTO DE MARKETING: CTA orientado a la conversión directa en el momento de mayor valor percibido */}
+          {/* MANDAMIENTO DE MARKETING: CTA orientado a la conversión. 
+              Ahora resalta violentamente gracias a que el fondo es oscuro, manteniendo la Regla 60-30-10. */}
           <a 
             href={APP_CONFIG.urls.whatsappSales} 
             target="_blank" 
@@ -64,8 +70,8 @@ export const Hardware = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          /* MANDAMIENTO DE DISEÑO: Tarjeta blanca limpia sin gradientes traseros para el Hardware. */
-          className="bg-white p-10 md:p-12 rounded-3xl w-full max-w-lg mx-auto shadow-2xl relative"
+          /* MANDAMIENTO DE DISEÑO (Cero efectos baratos): Tarjeta blanca limpia inmaculada. */
+          className="bg-white p-10 md:p-12 rounded-3xl w-full max-w-lg mx-auto shadow-2xl relative border border-slate-100"
         >
           <img 
             src={scannerImg} 
